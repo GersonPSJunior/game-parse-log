@@ -11,7 +11,7 @@ public class Player implements Serializable {
     @JsonIgnore
     private Integer id;
     private String name;
-    private Integer kill;
+    private Integer kill = 0;
 
     public Player() {
     }
@@ -56,5 +56,14 @@ public class Player implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", kill=" + kill +
+                '}';
     }
 }
