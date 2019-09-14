@@ -27,10 +27,4 @@ public class Death implements Serializable {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Death{" +
-                "kills_by_means=" + kills_by_means +
-                '}';
-    }
 }

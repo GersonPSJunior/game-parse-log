@@ -22,6 +22,11 @@ public class Game implements Serializable {
         this.id = id;
     }
 
+    @JsonIgnore
+    public Integer getId() {
+        return id;
+    }
+
     public Integer getTotal_kills() {
         return total_kills;
     }
@@ -69,15 +74,5 @@ public class Game implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Game{" +
-                "id=" + id +
-                ", total_kills=" + total_kills +
-                ", players=" + players +
-                ", kills=" + kills +
-                '}';
     }
 }
