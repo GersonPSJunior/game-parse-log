@@ -1,5 +1,6 @@
 package br.com.testepratico.enext.parsegame;
 
+import br.com.testepratico.enext.parsegame.domain.Death;
 import br.com.testepratico.enext.parsegame.domain.Game;
 import br.com.testepratico.enext.parsegame.domain.Player;
 import br.com.testepratico.enext.parsegame.util.ParseUtil;
@@ -34,7 +35,9 @@ public class ParseGameApplication implements CommandLineRunner {
 
 		Stream<String> lines = Files.lines(caminhoLog, StandardCharsets.ISO_8859_1);
 		List<Game> games = ParseUtil.readText(lines);
+		List<Death> deaths = ParseUtil.reportDeath();
 		ObjectMapper jackeson = new ObjectMapper();
 		System.out.println(jackeson.writerWithDefaultPrettyPrinter().writeValueAsString(games));
+		System.out.println(jackeson.writerWithDefaultPrettyPrinter().writeValueAsString(deaths));
 	}
 }
