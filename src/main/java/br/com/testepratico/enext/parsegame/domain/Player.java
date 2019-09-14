@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Player implements Serializable {
+public class Player implements Serializable, Comparable<Player>{
     private static final long serialVersionUID = 1L;
 
     @JsonIgnore
@@ -56,5 +56,12 @@ public class Player implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public int compareTo(Player player) {
+        if (this.kill < player.getKill()) return 1;
+        if (this.kill > player.getKill()) return -1;
+        return 0;
     }
 }

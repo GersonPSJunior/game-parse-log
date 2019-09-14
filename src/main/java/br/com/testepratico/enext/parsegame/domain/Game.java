@@ -1,5 +1,6 @@
 package br.com.testepratico.enext.parsegame.domain;
 
+import br.com.testepratico.enext.parsegame.data.DataLog;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
@@ -74,5 +75,10 @@ public class Game implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public void loadGame() {
+        Collections.sort(players);
+        DataLog.getRanking().put(id, players);
     }
 }
