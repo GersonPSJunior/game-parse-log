@@ -20,7 +20,7 @@ public class ParseUtil {
             ruleKill(DataLog.getGames(), linha);
         });
         DataLog.getGames().forEach(Game::putKills);
-        DataLog.getGames().forEach(Game::loadGame);
+        DataLog.getGames().forEach(Game::loadRanking);
     }
 
     private static void ruleKill(List<Game> games, String linha) {

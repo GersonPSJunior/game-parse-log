@@ -77,7 +77,7 @@ public class Game implements Serializable {
         return Objects.hash(id);
     }
 
-    public void loadGame() {
+    public void loadRanking() {
         Collections.sort(players);
         DataLog.getRanking().put(id, players);
     }
